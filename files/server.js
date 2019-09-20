@@ -6,5 +6,6 @@ var handleRequest = function(request, response) {
   response.writeHead(200);
   response.end("You've hit " + os.hostname() + " version:1\n");
 };
+
 var www = http.createServer(handleRequest);
 www.listen(8080);
