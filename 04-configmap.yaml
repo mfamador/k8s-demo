@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  database: some_db
+  keys: |
+    akey1=avalue1
+    akey2=avalue2
+    akey3=avalue3
+    akey4=avalue4
+kind: ConfigMap
+metadata:
+  name: configs
+  namespace: default

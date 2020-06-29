@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: hello-ds
+  labels:
+    app: hello-ds
+spec:
+  selector:
+    matchLabels:
+      app: hello-ds
+  template:
+    metadata:
+      labels:
+        app: hello-ds
+    spec:
+      containers:
+        - image: marcoamador/hello:1
+          name: hello-ds
