@@ -2,7 +2,7 @@
 
 kubectl create -f 01-deployment.yaml
 kubectl create -f 02-service.yaml
-kubectl create -f 03-service.yaml
+kubectl create -f 03-ingress.yaml
 kubectl create -f 04-configmap.yaml
 kubectl create -f 05-deployment-configmap.yaml
 kubectl create -f 06secret.yaml
