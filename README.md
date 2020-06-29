@@ -2,13 +2,14 @@
 
 [K8s introduction](https://docs.google.com/presentation/d/1WORoKAQ8fVSDGDADAE04f15uazCo9fgzFISuNhV3ay4/edit?usp=sharing)
 
-#### Start local Kubernetes cluster, e.g. minikube
+#### Create local Kubernetes cluster, e.g. k3d
 
-    minikube start
+    k3d create --publish 8080:80 --workers 3
+     
 
-#### Open kubernetes dashboard
-
-    minikube dashboard
+#### Start local Kubernetes cluster
+     
+    k3d start
 
 #### Monitor all resources created in default namespace
 
@@ -22,19 +23,20 @@
 
     kubectl create -f 02-service.yaml
     
-See the service IP
+
+#### Create a service to load balance across the previously created pods
+
+    kubectl create -f 03-ingresll.yaml
     
-    minikube service hello --url
-    
-Use the service
-    
-    curl $(minikube service hello --url)/anything
-    
+ 
+#### Access hello service
+   
+    curl -H "host:echo.com" localhost:8080
 Should get the response `You've hit hello-<ID> version:1`
 
 Look at the logs
     
-    kubectl logs -f hello-<ID>
+    kubectl logs -f deploy/hello
     
 #### Do a rolling upgrade
 
@@ -44,17 +46,17 @@ Edit the deployment directly on k8s
     
 Set image to marcoamador/hello:2
     
-    curl $(minikube service hello --url)/anything
+     curl -H "host:echo.com" localhost:8080
     
 The response must be now `You've hit hello-<ID> version:2`
 
 #### Create a configmap
 
-    kubectl create -f 03-configmap.yaml
+    kubectl create -f 04-configmap.yaml
     
 #### Use the previously created configmap in a deployment
 
-    kubectl create -f 04-deployment-configmap.yaml
+    kubectl create -f 05-deployment-configmap.yaml
     
 #### Connect to the previously created pod and check env variables
 
@@ -68,9 +70,9 @@ or
     
 #### Create a secret and a deployment that attaches it
 
-    kubectl create -f 05-secret.yaml
+    kubectl create -f 06-secret.yaml
 
-    kubectl create -f 06-deployment-secret.yaml
+    kubectl create -f 07-deployment-secret.yaml
 
 and "see" the secret:
     
@@ -79,9 +81,9 @@ and "see" the secret:
        
 ### Create a job and a cronjob
 
-    kubectl create -f 07-job.yaml
+    kubectl create -f 08-job.yaml
 
-    kubectl create -f 08-cronjob.yaml
+    kubectl create -f 09-cronjob.yaml
  
 Look at the logs
     
@@ -89,9 +91,9 @@ Look at the logs
     
 ### Create a daemonset and a service
 
-    kubectl create -f 09-daemonset.yaml
+    kubectl create -f 10-daemonset.yaml
 
-    kubectl create -f 10-service-ds.yaml
+    kubectl create -f 11-service-ds.yaml
 
 
 ### Delete all created resources
@@ -100,6 +102,6 @@ Look at the logs
 
 ### Stop local Kubernetes cluster, e.g. minikube
 
-    minikube stop
+    k3d stop
 
 
