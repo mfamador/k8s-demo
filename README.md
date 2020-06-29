@@ -2,7 +2,7 @@
 
 [K8s introduction](https://docs.google.com/presentation/d/1WORoKAQ8fVSDGDADAE04f15uazCo9fgzFISuNhV3ay4/edit?usp=sharing)
 
-#### Create local Kubernetes cluster, e.g. k3d
+#### Create local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation)
 
     k3d create --publish 8080:80 --workers 3
      
