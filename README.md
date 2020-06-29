@@ -26,7 +26,7 @@
 
 #### Create a service to load balance across the previously created pods
 
-    kubectl create -f 03-ingresll.yaml
+    kubectl create -f 03-ingress.yaml
     
  
 #### Access hello service

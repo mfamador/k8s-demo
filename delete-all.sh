@@ -2,7 +2,7 @@
 
 kubectl delete -f 01-deployment.yaml
 kubectl delete -f 02-service.yaml
-kubectl delete -f 03-service.yaml
+kubectl delete -f 03-ingress.yaml
 kubectl delete -f 04-configmap.yaml
 kubectl delete -f 05-deployment-configmap.yaml
 kubectl delete -f 06secret.yaml
