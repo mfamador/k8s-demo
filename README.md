@@ -100,7 +100,7 @@ Look at the logs
 
     ./delete-all.sh
 
-### Stop local Kubernetes cluster, e.g. minikube
+### Stop local Kubernetes cluster
 
     k3d stop
 
