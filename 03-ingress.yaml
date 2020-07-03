@@ -4,8 +4,8 @@ metadata:
   name: hello
 spec:
   rules:
-     - host: echo.com
-       http:
+    - host: echo.com
+      http:
          paths:
            - path: /
              backend:
