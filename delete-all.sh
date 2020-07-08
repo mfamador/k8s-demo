@@ -11,3 +11,6 @@ kubectl delete -f 08-job.yaml
 kubectl delete -f 09-cronjob.yaml
 kubectl delete -f 10-daemonset.yaml
 kubectl delete -f 11-service-ds.yaml
+kubectl delete -f 12-dashboard-admin-user.yaml
+
+kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
