@@ -26,7 +26,6 @@
 ## Create a service to load balance across the previously created pods
 
     kubectl create -f 03-ingress.yaml
-    
  
 ## Access hello service
    
@@ -36,7 +35,17 @@ Should get the response `You've hit hello-<ID> version:1`
 Look at the logs
     
     kubectl logs -f deploy/hello
+    
+    
+## If we don't have an out-of-the-box ingress controller (like a vanilla minikube)
+If our local cluster doesn't have an ingress controller just create a port-foward directly to the service port:
  
+    kubectl port-forward svc/hello 8888:8080
+    
+and in other terminal
+
+    curl localhost:8888
+
 ## Scale the hello deployment
    
     kubectl scale deployment hello -- replicas 5
