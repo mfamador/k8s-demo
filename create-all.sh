@@ -5,7 +5,7 @@ kubectl apply -f 02-service.yaml
 kubectl apply -f 03-ingress.yaml
 kubectl apply -f 04-configmap.yaml
 kubectl apply -f 05-deployment-configmap.yaml
-kubectl apply -f 06secret.yaml
+kubectl apply -f 06-secret.yaml
 kubectl apply -f 07-deployment-secret.yaml
 kubectl apply -f 08-job.yaml
 kubectl apply -f 09-cronjob.yaml
