@@ -68,13 +68,13 @@ The response must be now `You've hit hello-<ID> version:2`
     
 ## Connect to the previously created pod and check env variables
 
-    kubectl exec -it hello-configmap-<ID> bash
+    kubectl exec -it hello-configmap-<ID> -- sh
     
     # env
     
 or
     
-    kubectl exec hello-configmap-<ID> env
+    kubectl exec hello-configmap-<ID> -- env
     
 ## Create a secret and a deployment that attaches it
 
@@ -84,7 +84,7 @@ or
 
 and "see" the secret:
     
-    kubectl exec hello-secret-<ID> env | grep SECRET_USERNAME
+    kubectl exec hello-secret-<ID> -- env | grep SECRET_USERNAME
    
        
 ## Create a job and a cronjob
@@ -112,7 +112,7 @@ Look at the logs
 
 ## Create admin user
 
-    kubectl apply -f 12-dashboard-admin-user,yaml
+    kubectl apply -f 12-dashboard-admin-user.yaml
     
 ## Get user token
 
@@ -122,7 +122,7 @@ Look at the logs
 
     kubectl proxy
     
-    open http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+    [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/) 
 
 
 # Cleanup
