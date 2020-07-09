@@ -36,7 +36,16 @@ Should get the response `You've hit hello-<ID> version:1`
 Look at the logs
     
     kubectl logs -f deploy/hello
+ 
+## Scale the hello deployment
+   
+    kubectl scale deployment hello -- replicas 5
+
+Look at the logs
     
+    kubectl logs -f deploy/hello
+
+
 ## Do a rolling upgrade
 
 Edit the deployment directly on k8s
