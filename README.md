@@ -97,12 +97,15 @@ Look at the logs
     
     kubectl logs -f countdown-<ID>
     
-## Create a daemonset and a service
+## Create a daemonset, a service and ingress
 
     kubectl create -f 10-daemonset.yaml
 
     kubectl create -f 11-service-ds.yaml
 
+    kubectl create -f 12-ingress-ds.yaml
+
+    curl -H "host:echo-ds.com" localhost:8080
 
 # Kubernetes dashboard
 
@@ -112,7 +115,7 @@ Look at the logs
 
 ## Create admin user
 
-    kubectl apply -f 12-dashboard-admin-user.yaml
+    kubectl apply -f 13-dashboard-admin-user.yaml
     
 ## Get user token
 

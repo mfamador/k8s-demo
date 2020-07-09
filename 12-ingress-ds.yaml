@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: hello
+spec:
+  rules:
+    - host: echo-ds.com
+      http:
+         paths:
+           - path: /
+             backend:
+               serviceName: hello-ds
+               servicePort: 8080
+             
+ 
