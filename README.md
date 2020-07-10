@@ -1,7 +1,5 @@
 # Kubernetes demo
 
-[K8s introduction](https://docs.google.com/presentation/d/1WORoKAQ8fVSDGDADAE04f15uazCo9fgzFISuNhV3ay4/edit?usp=sharing)
-
 ## Create a local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation) (install v1.7.0)
 
     k3d create --publish 8080:80 --workers 3
