@@ -34,7 +34,7 @@ and in other terminal
 
     kubectl create -f 03-ingress.yaml
  
-## Access hello service through the previsouly created ingress
+## Access hello service through the previously created ingress
    
     curl -H "host:echo.com" localhost:8080
     
@@ -66,13 +66,16 @@ Set image to marcoamador/hello:2
     
 The response must be now `You've hit hello-<ID> version:2`
 
+
 ## Create a configmap
 
     kubectl create -f 04-configmap.yaml
     
+    
 ## Use the previously created configmap in a deployment
 
     kubectl create -f 05-deployment-configmap.yaml
+    
     
 ## Connect to the previously created pod and check env variables
 
@@ -105,6 +108,7 @@ Look at the logs
     
     kubectl logs -f countdown-<ID>
     
+ 
 ## Create a daemonset, a service and ingress
 
     kubectl create -f 10-daemonset.yaml
@@ -114,8 +118,10 @@ Look at the logs
     kubectl create -f 12-ingress-ds.yaml
 
     curl -H "host:echo-ds.com" localhost:8080
+    
 
 # Kubernetes dashboard
+
 
 ## Install dashboard
 
