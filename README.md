@@ -20,29 +20,30 @@
 
     kubectl create -f 02-service.yaml
     
-
-## Create a service to load balance across the previously created pods
-
-    kubectl create -f 03-ingress.yaml
- 
-## Access hello service
-   
-    curl -H "host:echo.com" localhost:8080
-Should get the response `You've hit hello-<ID> version:1`
-
-Look at the logs
     
-    kubectl logs -f deploy/hello
-    
-    
-## If we don't have an out-of-the-box ingress controller (like a vanilla minikube)
-If our local cluster doesn't have an ingress controller just create a port-foward directly to the service port:
+## Make a request to the newly created service
+create a port-foward directly to the service port:
  
     kubectl port-forward svc/hello 8888:8080
     
 and in other terminal
 
     curl localhost:8888
+    
+## Create an ingress to expose the service to the internet (needs an Ingress controller - K3d has a bundled Traefik)
+
+    kubectl create -f 03-ingress.yaml
+ 
+## Access hello service through the previsouly created ingress
+   
+    curl -H "host:echo.com" localhost:8080
+    
+Should get the response `You've hit hello-<ID> version:1`
+
+Look at the logs
+    
+    kubectl logs -f deploy/hello
+    
 
 ## Scale the hello deployment
    
