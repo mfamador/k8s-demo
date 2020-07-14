@@ -47,7 +47,7 @@ Look at the logs
 
 ## Scale the hello deployment
    
-    kubectl scale deployment hello -- replicas 5
+    kubectl scale deployment hello --replicas 5
 
 Look at the logs
     
