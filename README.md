@@ -52,6 +52,10 @@ Look at the logs
 Look at the logs
     
     kubectl logs -f deploy/hello
+    
+or use [stern](https://github.com/wercker/stern) to see the logs from all the pods
+
+    stern hello
 
 
 ## Do a rolling upgrade
