@@ -99,7 +99,7 @@ or
 
 and "see" the secret:
     
-    kubectl exec hello-secret-<ID> -- env | grep SECRET_USERNAME
+    kubectl exec hello-secret-<ID> -- env | grep SECRET_
    
        
 ## Create a job and a cronjob
