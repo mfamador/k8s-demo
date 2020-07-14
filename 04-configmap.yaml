@@ -8,7 +8,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  my-configs.yaml: |
+  config.properties: |
     akey1=avalue1
     akey2=avalue2
     akey3=avalue3
