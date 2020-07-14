@@ -111,6 +111,10 @@ and "see" the secret:
 Look at the logs
     
     kubectl logs -f countdown-<ID>
+ 
+ or
+ 
+    kubectl logs -f job/countdown
     
  
 ## Create a daemonset, a service and ingress
