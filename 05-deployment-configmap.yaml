@@ -21,4 +21,12 @@ spec:
         - containerPort: 8080
         envFrom:
         - configMapRef:
-            name: configs        
+            name: configs
+        volumeMounts:
+        - name: configs-volume
+          mountPath: /app/config.yaml
+          subPath: config.yaml
+      volumes:
+      - name: configs-volume
+        configMap:
+          name: configs-file
