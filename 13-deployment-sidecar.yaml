@@ -7,6 +7,15 @@ data:
       port: 8080
     services:
         cache:
+          ttl:
+            success: 30
+          exceptions:
+            - /metrics
+            - /healthz
+          methods:
+              - GET
+              - HEAD
+              - OPTIONS
           redis: {}
           ttl:
             success: 3600
@@ -49,7 +58,7 @@ spec:
     spec:
       initContainers:
       - name: init-networking
-        image: marcoamador/vache-init:1.1.2
+        image: marcoamador/vache-init:1.1.4
         securityContext:
             capabilities:
                 add:
@@ -57,7 +66,7 @@ spec:
             privileged: true
       containers:
       - name: vache-proxy
-        image: marcoamador/vache:1.1.2
+        image: marcoamador/vache:1.1.4
         volumeMounts:
         - name: configs-cache
           mountPath: /mfamador/app/configs/config.yaml
