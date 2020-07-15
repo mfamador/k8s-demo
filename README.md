@@ -137,7 +137,7 @@ Look at the logs
 
 ## Create admin user
 
-    kubectl apply -f 13-dashboard-admin-user.yaml
+    kubectl apply -f 14-dashboard-admin-user.yaml
     
 ## Get user token
 
