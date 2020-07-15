@@ -128,6 +128,38 @@ Look at the logs
     curl -H "host:echo-ds.com" localhost:8080
     
 
+## Create a deployment with a sidecar
+
+    kubectl create -f 13-deployment-sidecar.yaml
+
+see the logs from main container and sidecar in terminals side by side
+    
+sidecar cache proxy
+
+    kubectl logs -f deploy/hello-sidecar --container vache-proxy
+    
+the container with our API to be cached
+
+    kubectl logs -f deploy/hello-sidecar --container hello-sidecar
+    
+or use `stern`
+
+    stern hello-sidecar --container vache-proxy
+    stern hello-sidecar --container hello-sidecar
+    
+both container in same log:
+
+    stern hello-sidecar 
+ 
+ 
+make some requests (repeat them to see that the requests are cached for 15 secs):
+
+    curl -H "host:echo-sidecar.com" http://localhost:8080/something/1
+
+    curl -H "host:echo-sidecar.com" http://localhost:8080/something/2
+ 
+ 
+ 
 # Kubernetes dashboard
 
 

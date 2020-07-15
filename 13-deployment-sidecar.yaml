@@ -7,8 +7,6 @@ data:
       port: 8080
     services:
         cache:
-          ttl:
-            success: 30
           exceptions:
             - /metrics
             - /healthz
@@ -16,19 +14,16 @@ data:
               - GET
               - HEAD
               - OPTIONS
-          redis: {}
           ttl:
-            success: 3600
-            error: 30
+            success: 15
+            error: 3
           hash:
-            prefix: auth
-            overrides:
-            - originalPath: /authenticate
-              usePath: false
-              headers:
-              - X-Auth-Token
-              queryParams:
-              - apikey
+            prefix: demo
+            usePath: true
+            headers:
+            - X-Auth-Token
+            queryParams:
+            - apikey
         proxy:
             # Upstream targets definition, a.k.a where requests are routed to
             # Targets are used in a round robin fashion
