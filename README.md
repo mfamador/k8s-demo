@@ -29,7 +29,7 @@ or
      
     kubectl config set-context --current --namespace=demo
     
-or use kubens ([comes with kubectx](https://github.com/ahmetb/kubectx))
+or use kubens (comes with [kubectx](https://github.com/ahmetb/kubectx))
 
     kubens demo
 
