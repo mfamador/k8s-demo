@@ -4,7 +4,7 @@ data:
 kind: ConfigMap
 metadata:
   name: configs
-  namespace: default
+  namespace: demo
 ---
 apiVersion: v1
 data:
@@ -16,4 +16,4 @@ data:
 kind: ConfigMap
 metadata:
   name: configs-file
-  namespace: default
+  namespace: demo

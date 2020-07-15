@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: countdown
+  namespace: demo
 spec:
   template:
     metadata:

@@ -4,6 +4,7 @@ metadata:
   labels:
     app: hello-ds
   name: hello-ds
+  namespace: demo
 spec:
   ports:
   - port: 8000

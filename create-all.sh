@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+kubectl apply -f 00-namespace.yaml
 kubectl apply -f 01-deployment.yaml
 kubectl apply -f 02-service.yaml
 kubectl apply -f 03-ingress.yaml

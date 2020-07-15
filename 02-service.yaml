@@ -4,6 +4,7 @@ metadata:
   labels:
     app: hello
   name: hello
+  namespace: demo
 spec:
   ports:
   - port: 8000

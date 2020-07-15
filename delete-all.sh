@@ -17,3 +17,5 @@ kubectl delete -f 13-deployment-sidecar.yaml
 kubectl delete -f 14-dashboard-admin-user.yaml
 
 kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+
+kubectl delete -f 00-namespace.yaml

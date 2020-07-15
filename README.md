@@ -8,9 +8,34 @@
      
     k3d start
 
-## Monitor all resources created in default namespace
+## Set the kubernetes context
 
-    watch kubectl get all
+    kubectl config set-context k3s-default
+
+or use [kubectx](https://github.com/ahmetb/kubectx)
+
+    kubectx k3s-default
+
+## Create the `demo` namespace
+     
+    kubectl create namespace demo
+    
+or
+
+    kubectl create -f 00-namepace.yaml
+
+
+## Set `demo` namespace by default
+     
+    kubectl config set-context --current --namespace=demo
+    
+or use kubens ([install kubectx](https://github.com/ahmetb/kubectx))
+
+    kubens demo
+
+## Monitor all resources created in `demo` namespace
+
+    watch kubectl get all --namespace demo
 
 ## Create a deployment with 3 pods
 
@@ -140,12 +165,12 @@ sidecar cache proxy
     
 the container with our API to be cached
 
-    kubectl logs -f deploy/hello-sidecar --container hello-sidecar
+    kubectl logs -f deploy/hello-sidecar --container hello
     
 or use `stern`
 
     stern hello-sidecar --container vache-proxy
-    stern hello-sidecar --container hello-sidecar
+    stern hello-sidecar --container hello
     
 both container in same log:
 
@@ -192,7 +217,7 @@ open [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/http
 
     k3d stop
 
-## delete local Kubernetes cluster
+## Delete the local Kubernetes cluster
 
     k3d delete
 
