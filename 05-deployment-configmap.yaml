@@ -17,8 +17,9 @@ spec:
       containers:
       - name: hello-configmap
         image: marcoamador/hello:1
+        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         envFrom:
         - configMapRef:
             name: configs

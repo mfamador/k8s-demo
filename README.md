@@ -24,7 +24,7 @@
 ## Make a request to the newly created service
 create a port-foward directly to the service port:
  
-    kubectl port-forward svc/hello 8888:8080
+    kubectl port-forward svc/hello 8888:8000
     
 and in other terminal
 
