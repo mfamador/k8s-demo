@@ -10,7 +10,7 @@
 
 ## Set the kubernetes context
 
-    kubectl config set-context k3s-default
+    kubectl config use-context k3s-default
 
 or use [kubectx](https://github.com/ahmetb/kubectx)
 
