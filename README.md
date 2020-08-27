@@ -10,7 +10,7 @@
 
 ## Start the local Kubernetes cluster if you created it before
      
-    k3d start
+    k3d cluster start
 
 ## Set the kubernetes context
 
@@ -219,10 +219,10 @@ open [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/http
 
 ## Stop local Kubernetes cluster
 
-    k3d stop
+    k3d cluster stop
 
 ## Delete the local Kubernetes cluster
 
-    k3d delete
+    k3d cluster delete
 
 
