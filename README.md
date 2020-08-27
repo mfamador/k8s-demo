@@ -1,20 +1,24 @@
 # Kubernetes demo
 
-## Create a local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation) (install v1.7.0)
+## Create a local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation)
 
-    k3d create --publish 8080:80 --workers 3
+    k3d cluster create -p 8080:80@loadbalancer
+    
+#### add a few worker nodes
 
-## Start the local Kubernetes cluster
+    k3d node create node-pool-1 --replicas 3
+
+## Start the local Kubernetes cluster if you created it before
      
     k3d start
 
 ## Set the kubernetes context
 
-    kubectl config use-context k3s-default
+    kubectl config use-context k3d-k3s-default
 
 or use [kubectx](https://github.com/ahmetb/kubectx)
 
-    kubectx k3s-default
+    kubectx k3d-k3s-default
 
 ## Create the `demo` namespace
      
@@ -51,7 +55,7 @@ create a port-foward directly to the service port:
  
     kubectl port-forward svc/hello 8888:8000
     
-and in other terminal
+and in another terminal
 
     curl localhost:8888
     
