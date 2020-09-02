@@ -1,6 +1,6 @@
 # Kubernetes demo
 
-## Create a local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation)
+## Create a local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation) with 3 worker nodes
 
     k3d cluster create -p 8080:80@loadbalancer --agents 3
 
