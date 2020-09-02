@@ -2,13 +2,9 @@
 
 ## Create a local Kubernetes cluster, e.g. [k3d](https://k3d.io/#installation)
 
-    k3d cluster create -p 8080:80@loadbalancer
-    
-#### add a few worker nodes
+    k3d cluster create -p 8080:80@loadbalancer --agents 3
 
-    k3d node create node-pool-1 --replicas 3
-
-## Start the local Kubernetes cluster if you created it before
+## Start the local Kubernetes cluster if you've created it before
      
     k3d cluster start
 
