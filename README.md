@@ -47,11 +47,12 @@ or use kubens (comes with [kubectx](https://github.com/ahmetb/kubectx))
     
     
 ## Make a request to the newly created service
-create a port-foward directly to the service port:
+
+create a port-forward directly to the service port:
  
     kubectl port-forward svc/hello 8888:8000
     
-and in another terminal
+and execute in another terminal
 
     curl localhost:8888
     
