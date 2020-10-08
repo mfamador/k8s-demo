@@ -90,11 +90,11 @@ Edit the deployment directly on k8s
     
     kubectl edit deploy hello
     
-Set image to marcoamador/hello:2
+Set image to marcoamador/hello:1.0.1
     
      curl -H "host:echo.com" localhost:8080
     
-The response must be now `You've hit hello-<ID> version:2`
+The response must be now `You've hit hello-<ID> version:1.0.1`
 
 
 ## Create a configmap

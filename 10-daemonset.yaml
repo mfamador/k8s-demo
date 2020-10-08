@@ -15,5 +15,5 @@ spec:
         app: hello-ds
     spec:
       containers:
-        - image: marcoamador/hello:1
+        - image: marcoamador/hello:1.0.0
           name: hello-ds

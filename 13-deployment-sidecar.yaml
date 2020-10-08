@@ -79,7 +79,7 @@ spec:
             path: "/vache/healthz"
             port: proxy-http
       - name: hello
-        image: marcoamador/hello:1
+        image: marcoamador/hello:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8000

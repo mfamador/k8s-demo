@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: marcoamador/hello:1
+        image: marcoamador/hello:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
