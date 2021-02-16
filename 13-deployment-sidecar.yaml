@@ -104,7 +104,7 @@ spec:
     app: hello-sidecar
   type: ClusterIP
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello-sidecar
@@ -115,6 +115,9 @@ spec:
       http:
          paths:
            - path: /
+             pathType: Prefix
              backend:
-               serviceName: hello-sidecar
-               servicePort: 8000
+                service:
+                  name: hello-sidecar
+                  port:
+                    number: 8000
