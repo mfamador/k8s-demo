@@ -4,10 +4,10 @@ const os = require('os');
 var handleRequest = function(request, response) {
     console.log('Received request for URL: ' + request.url);
 
-    var version = 'version 1.0.0'
+    var version = '0.9.2'
 
     response.writeHead(200);
-    response.end("You've hit a critical app " + os.hostname() + " " + version + " \n");
+    response.end("You've hit a critical app (" + os.hostname() + ") version:" + version + " :=) \n");
 };
 
 var www = http.createServer(handleRequest);
