@@ -4,7 +4,7 @@ const os = require('os');
 var handleRequest = function(request, response) {
     console.log('Received request for URL: ' + request.url);
 
-    var version = '1.0.0'
+    var version = '2.1.1'
 
     const msgs = new Map();
     const codes = new Map();
@@ -52,8 +52,8 @@ var handleRequest = function(request, response) {
    < critical app version ` + version + ` returned ` + codes.get(ver) + ` >
     -----------------------------------------
             \\    ,-^-.
-            \\    !oYo!
-            \\   /./=\\.\\______
+             \\   !oYo!
+              \\ /./=\\.\\______
                    ##        )\\/\\
                     ||-----w||
                     ||      ||
@@ -65,8 +65,8 @@ var handleRequest = function(request, response) {
    < critical app version ` + version + ` returned ` + codes.get(ver) + ` >
     -----------------------------------------
             \\    ,-^-.
-            \\    !oYo!
-            \\   /./=\\.\\______
+             \\   !oYo!
+              \\ /./=\\.\\______
                    ##        )\\/\\
                     ||-----w||
                     ||      ||
@@ -78,8 +78,8 @@ var handleRequest = function(request, response) {
    < critical app version ` + version + ` returned ` + codes.get(ver) + ` >   ¯\\_(ツ)_/¯ 
     -----------------------------------------
             \\    ,-^-.
-            \\    !xYx!
-            \\   /./=\\.\\______
+             \\   !xYx!
+              \\ /./=\\.\\______
                    ##        )\\/\\
                 >==-----w==<
     `)
